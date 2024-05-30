@@ -1,0 +1,4 @@
+public static string ReplaceSubstring(string inputString, string oldSubstring, string newSubstring)
+{
+    return inputString.Replace(oldSubstring, newSubstring);
+}
