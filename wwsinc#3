@@ -1,0 +1,13 @@
+public static int CountOccurrences(string inputString, string searchString)
+{
+    int count = 0;
+    int index = 0;
+
+    while ((index = inputString.IndexOf(searchString, index)) != -1)
+    {
+        count++;
+        index += searchString.Length;
+    }
+
+    return count;
+}
