@@ -1,0 +1,16 @@
+static void Main(string[] args)
+{
+    Console.Write("Enter a string: ");
+    string userInput = Console.ReadLine();
+
+    string stringWithoutWhitespace = RemoveWhitespace(userInput);
+    Console.WriteLine($"String without whitespace: '{stringWithoutWhitespace}'");
+
+    string reversedString = ReverseString(userInput);
+    Console.WriteLine($"Reversed string: '{reversedString}'");
+}
+
+public static string ReverseString(string inputString)
+{
+    return new string(inputString.Reverse().ToArray());
+}
