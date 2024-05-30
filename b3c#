@@ -1,0 +1,17 @@
+using System;
+
+namespace CharToIntConversion
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a character: ");
+            char userChar = char.Parse(Console.ReadLine());
+
+            int asciiCode = (int)userChar;
+
+            Console.WriteLine($"The character you entered is '{userChar}', its ASCII code is {asciiCode}");
+        }
+    }
+}
