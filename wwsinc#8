@@ -1,0 +1,17 @@
+static void Main(string[] args)
+{
+    Console.Write("Enter a string: ");
+    string userInput = Console.ReadLine();
+
+    string stringWithoutWhitespace = RemoveWhitespace(userInput);
+    Console.WriteLine($"String without whitespace: '{stringWithoutWhitespace}'");
+
+    string reversedString = ReverseString(userInput);
+    Console.WriteLine($"Reversed string: '{reversedString}'");
+
+    Console.Write("Enter a search string: ");
+    string searchString = Console.ReadLine();
+
+    // You can now use the searchString variable to perform further operations
+    Console.WriteLine($"Searching for: '{searchString}'");
+}
