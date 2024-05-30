@@ -1,0 +1,4 @@
+public static string RemoveWhitespace(string inputString)
+{
+    return string.Concat(inputString.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries));
+}
