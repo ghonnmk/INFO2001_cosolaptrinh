@@ -1,0 +1,9 @@
+static void Main(string[] args)
+{
+    Console.Write("Enter a string: ");
+    string userInput = Console.ReadLine();
+
+    // Call other methods here using the userInput variable
+    string stringWithoutWhitespace = RemoveWhitespace(userInput);
+    Console.WriteLine($"String without whitespace: '{stringWithoutWhitespace}'");
+}
