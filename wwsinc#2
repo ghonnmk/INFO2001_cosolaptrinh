@@ -1,13 +1,4 @@
-public static int CountOccurrences(string inputString, string searchString)
+public static string ReverseString(string inputString)
 {
-    int count = 0;
-    int index = 0;
-
-    while ((index = inputString.IndexOf(searchString, index)) != -1)
-    {
-        count++;
-        index += searchString.Length;
-    }
-
-    return count;
+    return new string(inputString.Reverse().ToArray());
 }
