@@ -1,0 +1,26 @@
+static void Main(string[] args)
+{
+    Console.Write("Enter a string: ");
+    string userInput = Console.ReadLine();
+
+    string stringWithoutWhitespace = RemoveWhitespace(userInput);
+    Console.WriteLine($"String without whitespace: '{stringWithoutWhitespace}'");
+
+    string reversedString = ReverseString(userInput);
+    Console.WriteLine($"Reversed string: '{reversedString}'");
+
+    Console.Write("Enter a search string: ");
+    string searchString = Console.ReadLine();
+
+    int occurrences = CountOccurrences(userInput, searchString);
+    Console.WriteLine($"The search string '{searchString}' appears {occurrences} times in the input string.");
+
+    Console.Write("Enter an old substring: ");
+    string oldSubstring = Console.ReadLine();
+
+    Console.Write("Enter a new substring: ");
+    string newSubstring = Console.ReadLine();
+
+    // You can now use the oldSubstring and newSubstring variables to perform further operations
+    Console.WriteLine($"Replacing '{oldSubstring}' with '{newSubstring}'");
+}
