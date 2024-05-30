@@ -1,0 +1,31 @@
+static void Main(string[] args)
+{
+    Console.Write("Enter a string: ");
+    string userInput = Console.ReadLine();
+
+    string stringWithoutWhitespace = RemoveWhitespace(userInput);
+    Console.WriteLine($"String without whitespace: '{stringWithoutWhitespace}'");
+
+    string reversedString = ReverseString(userInput);
+    Console.WriteLine($"Reversed string: '{reversedString}'");
+
+    Console.Write("Enter a search string: ");
+    string searchString = Console.ReadLine();
+
+    int occurrences = CountOccurrences(userInput, searchString);
+    Console.WriteLine($"The search string '{searchString}' appears {occurrences} times in the input string.");
+}
+
+public static int CountOccurrences(string inputString, string searchString)
+{
+    int count = 0;
+    int index = 0;
+
+    while ((index = inputString.IndexOf(searchString, index)) != -1)
+    {
+        count++;
+        index += searchString.Length;
+    }
+
+    return count;
+}
