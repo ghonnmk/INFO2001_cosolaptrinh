@@ -1,0 +1,32 @@
+using System;
+
+namespace ArraySum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Nhập các số nguyên (8 byte), cách nhau bởi dấu cách: ");
+            string[] inputStrings = Console.ReadLine().Split();
+            long[] numbers = new long[inputStrings.Length];
+
+            for (int i = 0; i < inputStrings.Length; i++)
+            {
+                numbers[i] = long.Parse(inputStrings[i]);
+            }
+
+            long total = GetArraySum(numbers);
+            Console.WriteLine($"Tổng của các số trong mảng là: {total}");
+        }
+
+        static long GetArraySum(long[] arr)
+        {
+            long sum = 0;
+            foreach (long num in arr)
+            {
+                sum += num;
+            }
+            return sum;
+        }
+    }
+}
