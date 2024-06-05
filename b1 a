@@ -1,0 +1,47 @@
+
+using System;
+
+namespace MathOperations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 0, b = 0;
+            bool validInput = false;
+
+            // Nhập a và b với xử lý exception
+            while (!validInput)
+            {
+                try
+                {
+                    Console.Write("Nhập số nguyên a: ");
+                    a = int.Parse(Console.ReadLine());
+                    Console.Write("Nhập số nguyên b: ");
+                    b = int.Parse(Console.ReadLine());
+                    validInput = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Lỗi: Vui lòng nhập số nguyên hợp lệ.");
+                }
+            }
+
+            // Tính toán các phép tính
+            int sum = a + b;
+            int difference = a - b;
+            int product = a * b;
+            int quotientInteger = a / b;
+            double quotientFloat = (double)a / b;
+
+            // In kết quả ra màn hình
+            Console.WriteLine($"Tổng: {sum}");
+            Console.WriteLine($"Hiệu: {difference}");
+            Console.WriteLine($"Tích: {product}");
+            Console.WriteLine($"Thương (số nguyên): {quotientInteger}");
+            Console.WriteLine($"Thương (số thực): {quotientFloat}");
+
+            Console.ReadLine(); // Giữ cửa sổ console mở để xem kết quả
+        }
+    }
+}
