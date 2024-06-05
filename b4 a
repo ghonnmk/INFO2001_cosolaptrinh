@@ -1,10 +1,36 @@
-num = int(input("Nhập một số nguyên không dấu: "))
+using System;
 
-# Chuyển số thành chuỗi để dễ dàng kiểm tra
-num_str = str(num)
+namespace PalindromeChecker
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Nhập một số nguyên không dấu (8 byte): ");
+            ulong number = ulong.Parse(Console.ReadLine());
 
-# Kiểm tra xem số có phải là Palindrome không
-if num_str == num_str[::-1]:
-    print(f"{num} là số Palindrome.")
-else:
-    print(f"{num} không phải là số Palindrome.")
+            if (IsPalindrome(number))
+            {
+                Console.WriteLine($"{number} là số Palindrome.");
+            }
+            else
+            {
+                Console.WriteLine($"{number} không phải là số Palindrome.");
+            }
+        }
+
+        static bool IsPalindrome(ulong num)
+        {
+            ulong originalNum = num;
+            ulong reversedNum = 0;
+
+            while (num > 0)
+            {
+                reversedNum = reversedNum * 10 + (num % 10);
+                num /= 10;
+            }
+
+            return originalNum == reversedNum;
+        }
+    }
+}
