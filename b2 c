@@ -1,0 +1,25 @@
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Khai báo biến
+        byte n;
+        uint sum = 0;
+
+        // Nhập n từ người dùng
+        Console.Write("Nhập số nguyên n (0 - 255): ");
+        n = byte.Parse(Console.ReadLine());
+
+        // Tính tổng các số từ 1 đến n
+        for (byte i = 1; i <= n; i++)
+        {
+            sum += i;
+        }
+
+        // In kết quả
+        Console.WriteLine($"Tổng các số từ 1 đến {n} là: {sum}");
+    }
+}
