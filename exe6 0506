@@ -1,0 +1,56 @@
+
+﻿using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Khởi tạo biến sum để lưu trữ tổng của các số dương
+        int sum = 0;
+
+        // Khởi tạo biến boolean để kiểm soát vòng lặp chính
+        bool continueInput = true;
+
+        // Hiển thị thông báo cho người dùng
+        Console.WriteLine("Enter a series of numbers. Negative numbers will be skipped.");
+
+        // Bắt đầu vòng lặp chính
+        while (continueInput)
+        {
+            // Yêu cầu người dùng nhập một số (hoặc 'q' để thoát)
+            Console.Write("Enter a number (or 'q' to quit): ");
+            string input = Console.ReadLine();
+
+            // Nếu người dùng nhập 'q' thì thoát vòng lặp
+            if (input.ToLower() == "q")
+            {
+                continueInput = false;
+                break;
+            }
+
+            // Cố gắng phân tích đầu vào thành một số nguyên
+            if (int.TryParse(input, out int number))
+            {
+                // Nếu số đó là dương, cộng nó vào biến sum
+                if (number >= 0)
+                {
+                    sum += number;
+                }
+                // Nếu số đó là âm, hiển thị thông báo và bỏ qua nó
+                else
+                {
+                    Console.WriteLine($"Skipping negative number: {number}");
+                    continue;
+                }
+            }
+            // Nếu đầu vào không phải là số, hiển thị thông báo lỗi
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a number or 'q' to quit.");
+            }
+        }
+
+        // Hiển thị tổng của các số dương
+        Console.WriteLine($"The sum of the positive numbers is: {sum}");
+    }
+}
