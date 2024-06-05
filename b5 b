@@ -1,0 +1,51 @@
+using System;
+
+namespace MinMaxFinder
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Nhập các số thực (4 byte), cách nhau bởi dấu cách: ");
+            string[] inputStrings = Console.ReadLine().Split();
+            float[] numbers = new float[inputStrings.Length];
+
+            for (int i = 0; i < inputStrings.Length; i++)
+            {
+                numbers[i] = float.Parse(inputStrings[i]);
+            }
+
+            float min = GetMinValue(numbers);
+            float max = GetMaxValue(numbers);
+
+            Console.WriteLine($"Giá trị nhỏ nhất: {min}");
+            Console.WriteLine($"Giá trị lớn nhất: {max}");
+        }
+
+        static float GetMinValue(float[] arr)
+        {
+            float min = arr[0];
+            foreach (float num in arr)
+            {
+                if (num < min)
+                {
+                    min = num;
+                }
+            }
+            return min;
+        }
+
+        static float GetMaxValue(float[] arr)
+        {
+            float max = arr[0];
+            foreach (float num in arr)
+            {
+                if (num > max)
+                {
+                    max = num;
+                }
+            }
+            return max;
+        }
+    }
+}
