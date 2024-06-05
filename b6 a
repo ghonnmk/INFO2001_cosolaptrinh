@@ -1,0 +1,32 @@
+using System;
+
+namespace ArrayAverage
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Nhập các số thực (8 byte), cách nhau bởi dấu cách: ");
+            string[] inputStrings = Console.ReadLine().Split();
+            double[] numbers = new double[inputStrings.Length];
+
+            for (int i = 0; i < inputStrings.Length; i++)
+            {
+                numbers[i] = double.Parse(inputStrings[i]);
+            }
+
+            double average = GetArrayAverage(numbers);
+            Console.WriteLine($"Trung bình cộng của các số trong mảng là: {average}");
+        }
+
+        static double GetArrayAverage(double[] arr)
+        {
+            double sum = 0;
+            foreach (double num in arr)
+            {
+                sum += num;
+            }
+            return sum / arr.Length;
+        }
+    }
+}
