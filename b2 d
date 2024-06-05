@@ -1,0 +1,26 @@
+
+using System;
+
+namespace SumOfDigits
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Nhập số nguyên không dấu kiểu byte từ người dùng
+            Console.Write("Nhập số nguyên n (0 - 255): "); // Kiểu dữ liệu byte trong C# chỉ có thế biểu diễn các số nguyên từ 0 tới 255
+            byte n = byte.Parse(Console.ReadLine());
+
+            // Tính tổng các chữ số trong số n
+            int sum = 0;
+            while (n > 0)
+            {
+                sum += (int)(n % 10);
+                n /= 10;
+            }
+
+            // In kết quả lên màn hình
+            Console.WriteLine("Tổng các chữ số là: " + sum);
+        }
+    }
+}
