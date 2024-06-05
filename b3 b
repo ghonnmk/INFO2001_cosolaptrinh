@@ -1,0 +1,33 @@
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Nhập kích thước của mảng từ người dùng
+        Console.Write("Nhập kích thước của mảng: ");
+        int size = int.Parse(Console.ReadLine());
+
+        // Tạo mảng số nguyên có dấu kích thước 2 byte
+        short[] numbers = new short[size];
+
+        // Nhập giá trị cho mảng
+        Console.WriteLine("Nhập các phần tử của mảng:");
+        for (int i = 0; i < size; i++)
+        {
+            Console.Write($"Phần tử thứ {i + 1}: ");
+            numbers[i] = short.Parse(Console.ReadLine());
+        }
+
+        // Tính tổng các phần tử trong mảng
+        short sum = 0;
+        foreach (short num in numbers)
+        {
+            sum += num;
+        }
+
+        // In kết quả lên màn hình
+        Console.WriteLine($"Tổng của các phần tử trong mảng: {sum}");
+    }
+}
