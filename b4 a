@@ -1,0 +1,10 @@
+num = int(input("Nhập một số nguyên không dấu: "))
+
+# Chuyển số thành chuỗi để dễ dàng kiểm tra
+num_str = str(num)
+
+# Kiểm tra xem số có phải là Palindrome không
+if num_str == num_str[::-1]:
+    print(f"{num} là số Palindrome.")
+else:
+    print(f"{num} không phải là số Palindrome.")
