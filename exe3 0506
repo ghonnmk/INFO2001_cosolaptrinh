@@ -1,0 +1,32 @@
+﻿using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number, factorial = 1;
+
+        Console.Write("Enter a positive integer: ");
+        string input = Console.ReadLine();
+
+        if (int.TryParse(input, out number))
+        {
+            if (number < 0)
+            {
+                Console.WriteLine("Error: Negative numbers are not allowed.");
+                return;
+            }
+
+            for (int i = 1; i <= number; i++)
+            {
+                factorial *= i;
+            }
+
+            Console.WriteLine($"The factorial of {number} is {factorial}.");
+        }
+        else
+        {
+            Console.WriteLine("Error: Invalid input. Please enter a positive integer.");
+        }
+    }
+}
